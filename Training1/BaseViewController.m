@@ -50,19 +50,25 @@
 
 - (void)recieveFilterUpdate:(NSNotification *)notification
 {
-    if (button.tag == 1)
-    {
-        filteredBrand = [[notification userInfo] objectForKey:@"Filters"];
-    }
+    NSMutableArray *receivedFilteredArray;
+    receivedFilteredArray = [[notification userInfo] objectForKey:@"Filters"];
     
-    else if ( button.tag == 2)
+    switch (button.tag)
     {
-        filteredColor = [[notification userInfo] objectForKey:@"Filters"];
-    }
-    
-    else if ( button.tag == 3)
-    {
-        filteredAvail = [[notification userInfo] objectForKey:@"Filters"];
+        case 1:
+            filteredBrand = receivedFilteredArray;
+            break;
+
+        case 2:
+            filteredColor = receivedFilteredArray;
+            break;
+
+        case 3:
+            filteredAvail = receivedFilteredArray;
+             break;
+
+        default:
+            break;
     }
     
     [self filterVisibilityOfProduct];
@@ -82,20 +88,25 @@
         
         else
         {
-            if (((filteredBrand.count == 0) || [filteredBrand containsObject:product.brand]) &&
-                ((filteredColor.count == 0) || [filteredColor containsObject:product.color]) &&
-                ((filteredAvail.count == 0) || [filteredAvail containsObject:product.available]))
-                {
-                    product.visible = true;
-                }
-          	
-            else
-                {
-                    product.visible = false;
-                }
+            [self filterProducts];
         }
     }
     [self.collectionView reloadData];
+}
+
+-(void)filterProducts
+{
+    if (((filteredBrand.count == 0) || [filteredBrand containsObject:product.brand]) &&
+        ((filteredColor.count == 0) || [filteredColor containsObject:product.color]) &&
+        ((filteredAvail.count == 0) || [filteredAvail containsObject:product.available]))
+    {
+        product.visible = true;
+    }
+    
+    else
+    {
+        product.visible = false;
+    }
 }
 
 #pragma mark collectionview_datasource_methods
@@ -128,12 +139,11 @@
 {
     product = [productsListArray objectAtIndex:indexPath.row];
     
-    NSLog(@"%d",product.visible);
-    if (product.visible == false)
+    if (!product.visible)
     {
-              return CGSizeMake(0.f, 0.f);
+        return CGSizeMake(0.f, 0.f);
     }
-        return CGSizeMake(140.f, 140.f);
+        return CGSizeMake(140.f, 143.f);
 }
 
 - (IBAction)filterAction:(id)sender

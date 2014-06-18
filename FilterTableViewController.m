@@ -59,27 +59,27 @@ static   NSMutableArray *selectedRowsArray ;
 }
 
 -(void)viewWillAppear:(BOOL)animated
-{
-    NSLog(@"set array %d",_selectedFilter);
-    
-    if (_selectedFilter == 1)
+{   
+    switch (_selectedFilter)
     {
-        filterArray = appDelegate.brandArray;
-        selectedRowsArray = selectedRowsBrandArray;
+        case 1:
+            filterArray = appDelegate.brandArray;
+            selectedRowsArray = selectedRowsBrandArray;
+            break;
+            
+        case 2:
+            filterArray = appDelegate.colorArray;
+            selectedRowsArray = selectedRowsColorArray;
+            break;
+            
+        case 3:
+            filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
+            selectedRowsArray = selectedRowsAvailArray;
+            break;
+
+        default:
+            break;
     }
-    
-    else if (_selectedFilter == 2)
-    {
-        filterArray = appDelegate.colorArray;
-        selectedRowsArray = selectedRowsColorArray;
-    }
-    
-    else if (_selectedFilter == 3)
-    {
-        filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
-        selectedRowsArray = selectedRowsAvailArray;
-    }
-    
     [self.tableView reloadData];
 }
 
@@ -93,23 +93,19 @@ static   NSMutableArray *selectedRowsArray ;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return filterArray.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Filter_Cell" forIndexPath:indexPath];
     
     cell.textLabel.text = [filterArray objectAtIndex:indexPath.row];
-    
     
     if ([selectedRowsArray containsObject:[filterArray objectAtIndex:indexPath.row]])
     {

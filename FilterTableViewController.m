@@ -48,7 +48,6 @@ static   NSMutableArray *selectedRowsArray ;
         selectedRowsAvailArray = [[NSMutableArray alloc] init];
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -57,7 +56,6 @@ static   NSMutableArray *selectedRowsArray ;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Filter_Cell"];
     appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -80,7 +78,6 @@ static   NSMutableArray *selectedRowsArray ;
     {
         filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
         selectedRowsArray = selectedRowsAvailArray;
-
     }
     
     [self.tableView reloadData];

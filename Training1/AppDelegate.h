@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong , nonatomic) NSMutableArray *finalArray;
+@property (strong , nonatomic) NSMutableArray *productsArray;
 @property (strong , nonatomic) NSMutableArray *parsedArray;
 @property (strong , nonatomic) NSMutableArray *productArray;
 @property (nonatomic , strong) NSMutableArray *brandArray;

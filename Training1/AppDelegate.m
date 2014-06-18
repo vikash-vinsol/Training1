@@ -16,7 +16,7 @@
 @end
 
 @implementation AppDelegate
-@synthesize parsedArray,finalArray,productArray,brandArray,colorArray;
+@synthesize parsedArray,productsArray,productArray,brandArray,colorArray;
             
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -30,15 +30,16 @@
     NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     parsedArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
+    brandArray         = [[NSMutableArray alloc] init];
+    colorArray         = [[NSMutableArray alloc] init];
+    productArray       = [[NSMutableArray alloc] init];
+    productsArray      = [[NSMutableArray alloc] init];
+    
     return YES;
 }
 
 -(NSMutableArray *) getProductData
 {
-    brandArray         = [[NSMutableArray alloc] init];
-    colorArray         = [[NSMutableArray alloc] init];
-    productArray       = [[NSMutableArray alloc] init];
-    finalArray         = [[NSMutableArray alloc] init];
 
     for(NSDictionary *dictObj in parsedArray)
     {
@@ -56,9 +57,9 @@
         [productArray addObject:product];
     }
     
-    finalArray = [[NSMutableArray alloc] initWithObjects:productArray,brandArray,colorArray, nil];
+    productsArray = [NSMutableArray arrayWithObjects:productArray,brandArray,colorArray, nil];
         
-    return finalArray;
+    return productsArray;
 }
 
 -(void)createFilterArray:(NSMutableArray *)Filteredarray : (NSString *)filterType

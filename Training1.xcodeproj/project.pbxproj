@@ -10,11 +10,8 @@
 		EB50EA18194977DA0019AB57 /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA13194977DA0019AB57 /* FPPopoverController.m */; };
 		EB50EA19194977DA0019AB57 /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA15194977DA0019AB57 /* FPPopoverView.m */; };
 		EB50EA1A194977DA0019AB57 /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA17194977DA0019AB57 /* FPTouchView.m */; };
-		EB50EA1D194978A00019AB57 /* BrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA1C194978A00019AB57 /* BrandTableViewController.m */; };
-		EB5582EF19497DEF00E48295 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5582EE19497DEF00E48295 /* ColorTableViewController.m */; };
 		EB5582F11949875D00E48295 /* Checked.png in Resources */ = {isa = PBXBuildFile; fileRef = EB5582F01949875D00E48295 /* Checked.png */; };
 		EB5582F31949876300E48295 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = EB5582F21949876300E48295 /* unchecked.png */; };
-		EB5582F619499BB500E48295 /* AvailableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5582F519499BB500E48295 /* AvailableTableViewController.m */; };
 		EB56A57919516FDE0067278D /* FilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB56A57819516FDE0067278D /* FilterTableViewController.m */; };
 		EBAE359519482A080092F151 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAE359419482A080092F151 /* BaseViewController.m */; };
 		EBAE359B19482A930092F151 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAE359A19482A930092F151 /* BaseCollectionViewCell.m */; };
@@ -65,14 +62,8 @@
 		EB50EA15194977DA0019AB57 /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
 		EB50EA16194977DA0019AB57 /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
 		EB50EA17194977DA0019AB57 /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
-		EB50EA1B194978A00019AB57 /* BrandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandTableViewController.h; sourceTree = "<group>"; };
-		EB50EA1C194978A00019AB57 /* BrandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandTableViewController.m; sourceTree = "<group>"; };
-		EB5582ED19497DEF00E48295 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
-		EB5582EE19497DEF00E48295 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 		EB5582F01949875D00E48295 /* Checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checked.png; sourceTree = "<group>"; };
 		EB5582F21949876300E48295 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
-		EB5582F419499BB500E48295 /* AvailableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableTableViewController.h; sourceTree = "<group>"; };
-		EB5582F519499BB500E48295 /* AvailableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableTableViewController.m; sourceTree = "<group>"; };
 		EB56A57719516FDE0067278D /* FilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewController.h; sourceTree = "<group>"; };
 		EB56A57819516FDE0067278D /* FilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewController.m; sourceTree = "<group>"; };
 		EBAE359319482A080092F151 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -176,12 +167,6 @@
 				EBAE359E194895F00092F151 /* Product.h */,
 				EBAE359F194895F00092F151 /* Product.m */,
 				EBCE7C6A19477EEB00496731 /* Main.storyboard */,
-				EB50EA1B194978A00019AB57 /* BrandTableViewController.h */,
-				EB50EA1C194978A00019AB57 /* BrandTableViewController.m */,
-				EB5582F419499BB500E48295 /* AvailableTableViewController.h */,
-				EB5582F519499BB500E48295 /* AvailableTableViewController.m */,
-				EB5582ED19497DEF00E48295 /* ColorTableViewController.h */,
-				EB5582EE19497DEF00E48295 /* ColorTableViewController.m */,
 				EBAE359919482A930092F151 /* BaseCollectionViewCell.h */,
 				EBAE359A19482A930092F151 /* BaseCollectionViewCell.m */,
 				EBAE359319482A080092F151 /* BaseViewController.h */,
@@ -371,15 +356,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBCE7C6619477EEB00496731 /* AppDelegate.m in Sources */,
-				EB50EA1D194978A00019AB57 /* BrandTableViewController.m in Sources */,
 				EBAE35A0194895F00092F151 /* Product.m in Sources */,
 				EB56A57919516FDE0067278D /* FilterTableViewController.m in Sources */,
 				EB50EA19194977DA0019AB57 /* FPPopoverView.m in Sources */,
 				EBAE359519482A080092F151 /* BaseViewController.m in Sources */,
 				EB50EA1A194977DA0019AB57 /* FPTouchView.m in Sources */,
 				EB50EA18194977DA0019AB57 /* FPPopoverController.m in Sources */,
-				EB5582EF19497DEF00E48295 /* ColorTableViewController.m in Sources */,
-				EB5582F619499BB500E48295 /* AvailableTableViewController.m in Sources */,
 				EBAE359B19482A930092F151 /* BaseCollectionViewCell.m in Sources */,
 				EBCE7C6319477EEB00496731 /* main.m in Sources */,
 			);

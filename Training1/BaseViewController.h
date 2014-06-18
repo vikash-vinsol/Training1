@@ -20,7 +20,6 @@
 @property (nonatomic, strong) NSArray *colorFilterArray;
 @property (nonatomic, strong) Product *product;
 
-- (IBAction)brandAction:(id)sender;
-- (IBAction)AvailableAction:(id)sender;
-- (IBAction)colorAction:(id)sender;
+- (IBAction)filterAction:(id)sender;
+
 @end

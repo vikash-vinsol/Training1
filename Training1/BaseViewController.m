@@ -9,9 +9,7 @@
 #import "BaseViewController.h"
 #import "BaseCollectionViewCell.h"
 #import "FPPopoverController.h"
-#import "BrandTableViewController.h"
-#import "ColorTableViewController.h"
-#import "AvailableTableViewController.h"
+
 #import "FilterTableViewController.h"
 
 @interface BaseViewController ()
@@ -58,29 +56,6 @@
     filteredAvail = [[NSMutableArray alloc] init];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveFilterUpdate:) name:@"FilterChanged" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveColorUpdate:) name:@"colorFilterChanged" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveAvailUpdate:) name:@"availFilterChanged" object:nil];
-}
-
-#pragma mark Notification Methods
-
-- (void)recieveBrandUpdate:(NSNotification *)notification
-{
-    filteredBrand = [[notification userInfo ] objectForKey:@"brand"] ;
-    [self filterVisibilityOfProduct ];
-}
-
-- (void)recieveColorUpdate:(NSNotification *)notification
-{
-    filteredColor = [[notification userInfo] objectForKey:@"color"];
-    
-    [self filterVisibilityOfProduct ];
-}
-
-- (void)recieveAvailUpdate:(NSNotification *)notification
-{
-    filteredAvail = [[notification userInfo] objectForKey:@"avail"];
-    [self filterVisibilityOfProduct];
 }
 
 - (void)recieveFilterUpdate:(NSNotification *)notification
@@ -171,9 +146,9 @@
         return CGSizeMake(140.f, 140.f);
 }
 
-- (IBAction)brandAction:(id)sender
+- (IBAction)filterAction:(id)sender
 {
-    if ( filterViewController == nil)
+    if (filterViewController == nil)
     {
         filterViewController = [[FilterTableViewController alloc] init];
     }
@@ -183,27 +158,8 @@
         popOver = [[FPPopoverController alloc] initWithViewController:filterViewController];
     }
     
-    NSLog(@"log selection pop %d",filterViewController.selectedFilter);
-
-    
     button = sender;
-    
     filterViewController.selectedFilter = button.tag;
-    
-    [popOver presentPopoverFromView:sender];
-}
-
-- (IBAction)AvailableAction:(id)sender
-{
-    AvailableTableViewController *availController = [[AvailableTableViewController alloc] init];
-    FPPopoverController *popController = [[FPPopoverController alloc] initWithViewController:availController];
-    [popController presentPopoverFromView:sender];
-}
-
-- (IBAction)colorAction:(id)sender
-{
-    ColorTableViewController *colorController = [[ColorTableViewController alloc] init];
-    FPPopoverController *popOver = [[FPPopoverController alloc] initWithViewController:colorController];
     [popOver presentPopoverFromView:sender];
 }
 

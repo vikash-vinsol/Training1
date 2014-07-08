@@ -10,4 +10,28 @@
 
 @implementation Filter
 
+@synthesize values,name;
+
+
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (!values)
+    {
+        values = [[NSMutableArray alloc] init];
+
+    }
+    return self;
+}
+
+-(void)addValue:(NSString *)value
+{
+    if (![values containsObject:value])
+    {
+        [values addObject:value];
+        NSLog(@"%@",values);
+    }
+}
+
 @end

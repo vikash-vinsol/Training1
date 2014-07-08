@@ -8,6 +8,7 @@
 
 #import "FilterTableViewController.h"
 #import "AppDelegate.h"
+#import "filter.h"
 
 @interface FilterTableViewController ()
 {
@@ -60,26 +61,33 @@ static   NSMutableArray *selectedRowsArray ;
 
 -(void)viewWillAppear:(BOOL)animated
 {   
-    switch (_selectedFilter)
-    {
-        case 1:
-            filterArray = appDelegate.brandArray;
-            selectedRowsArray = selectedRowsBrandArray;
-            break;
-            
-        case 2:
-            filterArray = appDelegate.colorArray;
-            selectedRowsArray = selectedRowsColorArray;
-            break;
-            
-        case 3:
-            filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
-            selectedRowsArray = selectedRowsAvailArray;
-            break;
-
-        default:
-            break;
-    }
+//    switch (_selectedFilter)
+//    {
+//        case 1:
+//            filterArray = appDelegate.brandArray;
+//            selectedRowsArray = selectedRowsBrandArray;
+//            break;
+//            
+//        case 2:
+//            filterArray = appDelegate.colorArray;
+//            selectedRowsArray = selectedRowsColorArray;
+//            break;
+//            
+//        case 3:
+//            filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
+//            selectedRowsArray = selectedRowsAvailArray;
+//            break;
+//
+//        default:
+//            break;
+//    }
+    
+    Filter *filter  = [[Filter alloc] init];
+    
+    NSLog(@"table class %@",filter.values);
+    
+    filterArray = filter.values;
+    
     [self.tableView reloadData];
 }
 

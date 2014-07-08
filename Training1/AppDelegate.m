@@ -12,6 +12,11 @@
 
 @interface AppDelegate ()
 
+{
+    Filter *brandFilter;
+    Filter *colorFilter;
+}
+
 @end
 
 @implementation AppDelegate
@@ -33,9 +38,8 @@
     colorArray         = [[NSMutableArray alloc] init];
     productArray       = [[NSMutableArray alloc] init];
     productsArray      = [[NSMutableArray alloc] init];
-    
-    Filter *brand = [[Filter alloc] init];
-    Filter *color = [[Filter alloc] init];
+    brandFilter =           [[Filter alloc] init];
+    colorFilter = [[Filter alloc] init];
     
     return YES;
 }
@@ -47,10 +51,12 @@
         Product *product = [[Product alloc] init];
         product.brand = dictObj[@"brand"];
         
-        [self createFilterArray:brandArray :product.brand];
+        [brandFilter addValue:product.brand];
+        
         product.color = dictObj[@"color"];
         
-        [self createFilterArray:colorArray :product.color];
+        [colorFilter addValue:product.color];
+                
         product.available = dictObj[@"sold_out"];
         product.imageURL  = dictObj[@"url"];
         
@@ -63,11 +69,4 @@
     return productsArray;
 }
 
--(void)createFilterArray:(NSMutableArray *)Filteredarray : (NSString *)filterType
-{
-    if (! [Filteredarray containsObject:filterType])
-    {
-        [Filteredarray addObject:filterType];
-    }
-}
 @end

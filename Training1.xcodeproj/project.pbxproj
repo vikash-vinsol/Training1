@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB36BC61196C0A0B00E26CCD /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = EB36BC60196C0A0B00E26CCD /* Filter.m */; };
 		EB50EA18194977DA0019AB57 /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA13194977DA0019AB57 /* FPPopoverController.m */; };
 		EB50EA19194977DA0019AB57 /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA15194977DA0019AB57 /* FPPopoverView.m */; };
 		EB50EA1A194977DA0019AB57 /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB50EA17194977DA0019AB57 /* FPTouchView.m */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB36BC5F196C0A0B00E26CCD /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		EB36BC60196C0A0B00E26CCD /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
 		EB50EA11194977DA0019AB57 /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
 		EB50EA12194977DA0019AB57 /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
 		EB50EA13194977DA0019AB57 /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 			children = (
 				EBCE7C6419477EEB00496731 /* AppDelegate.h */,
 				EBCE7C6519477EEB00496731 /* AppDelegate.m */,
+				EB36BC5F196C0A0B00E26CCD /* Filter.h */,
+				EB36BC60196C0A0B00E26CCD /* Filter.m */,
 				EBAE359E194895F00092F151 /* Product.h */,
 				EBAE359F194895F00092F151 /* Product.m */,
 				EBCE7C6A19477EEB00496731 /* Main.storyboard */,
@@ -364,6 +369,7 @@
 				EB50EA18194977DA0019AB57 /* FPPopoverController.m in Sources */,
 				EBAE359B19482A930092F151 /* BaseCollectionViewCell.m in Sources */,
 				EBCE7C6319477EEB00496731 /* main.m in Sources */,
+				EB36BC61196C0A0B00E26CCD /* Filter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

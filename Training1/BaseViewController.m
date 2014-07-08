@@ -143,7 +143,7 @@
     {
         return CGSizeMake(0.f, 0.f);
     }
-        return CGSizeMake(140.f, 143.f);
+        return CGSizeMake(140.f, 140.f);
 }
 
 - (IBAction)filterAction:(id)sender

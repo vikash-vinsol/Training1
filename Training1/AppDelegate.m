@@ -8,10 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Product.h"
-
+#import "Filter.h"
 
 @interface AppDelegate ()
-            
 
 @end
 
@@ -35,15 +34,17 @@
     productArray       = [[NSMutableArray alloc] init];
     productsArray      = [[NSMutableArray alloc] init];
     
+    Filter *brand = [[Filter alloc] init];
+    Filter *color = [[Filter alloc] init];
+    
     return YES;
 }
 
 -(NSMutableArray *) getProductData
 {
-
     for(NSDictionary *dictObj in parsedArray)
     {
-        Product *product   = [[Product alloc] init];
+        Product *product = [[Product alloc] init];
         product.brand = dictObj[@"brand"];
         
         [self createFilterArray:brandArray :product.brand];
@@ -57,7 +58,7 @@
         [productArray addObject:product];
     }
     
-    productsArray = [NSMutableArray arrayWithObjects:productArray,brandArray,colorArray, nil];
+    productsArray = [NSMutableArray arrayWithObjects:productArray, brandArray, colorArray, nil];
         
     return productsArray;
 }

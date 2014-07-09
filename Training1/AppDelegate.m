@@ -62,6 +62,9 @@
         
         product.visible = true;
         [productArray addObject:product];
+        
+        NSLog(@"color %@",colorFilter);
+        NSLog(@"brand %@",brandFilter);
     }
     
     productsArray = [NSMutableArray arrayWithObjects:productArray, brandArray, colorArray, nil];

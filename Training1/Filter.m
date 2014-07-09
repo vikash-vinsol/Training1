@@ -20,7 +20,6 @@
     if (!values)
     {
         values = [[NSMutableArray alloc] init];
-
     }
     return self;
 }

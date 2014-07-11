@@ -14,5 +14,6 @@
 @property (nonatomic,strong) NSMutableArray *values;
 
 -(void)addValue:(NSString *)filterType;
+-(instancetype)initWithName : (NSString *)filterName;
 
 @end

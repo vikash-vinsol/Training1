@@ -13,14 +13,13 @@
 @synthesize values,name;
 
 
--(instancetype)init
+-(instancetype)initWithName : (NSString *)filterName;
 {
     self = [super init];
     
-    if (!values)
-    {
-        values = [[NSMutableArray alloc] init];
-    }
+    values = [[NSMutableArray alloc] init];
+    name   = filterName;
+    
     return self;
 }
 
@@ -29,7 +28,6 @@
     if (![values containsObject:value])
     {
         [values addObject:value];
-        NSLog(@"%@",values);
     }
 }
 

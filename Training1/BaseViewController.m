@@ -28,6 +28,19 @@
 
 @synthesize receivedArray,brandFilterArray,colorFilterArray,productsListArray,product;
 
+
+-(instancetype) init
+{
+    self = [super init];
+    
+    filteredBrand = [[NSMutableArray alloc] init];
+    filteredColor = [[NSMutableArray alloc] init];
+    filteredAvail = [[NSMutableArray alloc] init];
+
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,16 +48,10 @@
     product = [[Product alloc] init];
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     receivedArray = [appDelegate getProductData];
+    productsListArray = receivedArray;
     
-    brandFilterArray = [[NSArray alloc] initWithObjects:[receivedArray objectAtIndex:2], nil];
-    colorFilterArray = [[NSArray alloc] initWithObjects:[receivedArray objectAtIndex:1], nil];
-    productsListArray = [receivedArray objectAtIndex:0];
-    
-    filteredBrand = [[NSMutableArray alloc] init];
-    filteredColor = [[NSMutableArray alloc] init];
-    filteredAvail = [[NSMutableArray alloc] init];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveFilterUpdate:) name:@"FilterChanged" object:nil];
 }
 
@@ -162,5 +169,6 @@
     filterViewController.selectedFilter = button.tag;
     [popOver presentPopoverFromView:sender];
 }
+
 
 @end

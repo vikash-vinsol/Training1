@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Filter.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong , nonatomic) NSMutableArray *productsArray;
 @property (strong , nonatomic) NSMutableArray *parsedArray;
 @property (strong , nonatomic) NSMutableArray *productArray;
-@property (nonatomic , strong) NSMutableArray *brandArray;
-@property (nonatomic , strong) NSMutableArray *colorArray;
+@property (strong , nonatomic) Filter *brandFilter;
+@property (strong , nonatomic) Filter *colorFilter;
+
+
+
 
 -(NSMutableArray *) getProductData;
 

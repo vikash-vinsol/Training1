@@ -60,7 +60,16 @@ static   NSMutableArray *selectedRowsArray ;
 }
 
 -(void)viewWillAppear:(BOOL)animated
-{   
+{
+    
+    NSLog(@"name %@", appDelegate.colorFilter.name);
+    
+//    if ([appDelegate.colorFilter.name isEqualToString: @"color"])
+//    {
+//        filterArray = appDelegate.colorFilter.values;
+//        selectedRowsArray = selectedRowsBrandArray;
+//    }
+    
     switch (_selectedFilter)
     {
         case 1:

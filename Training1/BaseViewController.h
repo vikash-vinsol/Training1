@@ -14,12 +14,14 @@
 @interface BaseViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *receivedArray;
 @property (nonatomic, strong) NSArray *productsListArray;
 @property (nonatomic, strong) NSArray *brandFilterArray;
 @property (nonatomic, strong) NSArray *colorFilterArray;
 @property (nonatomic, strong) Product *product;
 
+@property (weak, nonatomic) IBOutlet UIButton *filterButton1;
+@property (weak, nonatomic) IBOutlet UIButton *filterButton2;
+@property (weak, nonatomic) IBOutlet UIButton *filterButton3;
 
 - (IBAction)filterAction:(id)sender;
 

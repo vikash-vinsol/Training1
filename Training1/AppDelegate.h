@@ -16,11 +16,9 @@
 
 @property (strong , nonatomic) NSMutableArray *parsedArray;
 @property (strong , nonatomic) NSMutableArray *productArray;
+
 @property (strong , nonatomic) Filter *brandFilter;
 @property (strong , nonatomic) Filter *colorFilter;
-
-
-
 
 -(NSMutableArray *) getProductData;
 

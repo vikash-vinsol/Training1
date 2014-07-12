@@ -103,6 +103,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="zSQ-5I-2sw" id="bDC-aa-63v"/>
+                        <outlet property="filterButton1" destination="OmJ-fM-kt9" id="fwj-5R-pK7"/>
+                        <outlet property="filterButton2" destination="KUP-sH-XYs" id="3jx-x2-HB1"/>
+                        <outlet property="filterButton3" destination="unS-Qo-vqm" id="cMm-No-FzZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcn-Ia-WXU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -26,20 +26,7 @@
     UIButton *button;
 }
 
-@synthesize receivedArray,brandFilterArray,colorFilterArray,productsListArray,product;
-
-
--(instancetype) init
-{
-    self = [super init];
-    
-    filteredBrand = [[NSMutableArray alloc] init];
-    filteredColor = [[NSMutableArray alloc] init];
-    filteredAvail = [[NSMutableArray alloc] init];
-
-    return self;
-}
-
+@synthesize brandFilterArray,colorFilterArray,productsListArray,product;
 
 - (void)viewDidLoad
 {
@@ -49,10 +36,13 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
-    receivedArray = [appDelegate getProductData];
-    productsListArray = receivedArray;
+    productsListArray = [appDelegate getProductData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveFilterUpdate:) name:@"FilterChanged" object:nil];
+    
+    [_filterButton1 setTitle: [NSString stringWithFormat:@"%@",appDelegate.brandFilter.name] forState: UIControlStateNormal];
+    [_filterButton2 setTitle: [NSString stringWithFormat:@"%@",appDelegate.colorFilter.name] forState: UIControlStateNormal];
+    [_filterButton3 setTitle: @"Avail" forState: UIControlStateNormal];
 }
 
 - (void)recieveFilterUpdate:(NSNotification *)notification

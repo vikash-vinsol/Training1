@@ -10,6 +10,6 @@
 
 @interface FilterTableViewController : UITableViewController
 
-@property (nonatomic, assign) NSInteger selectedFilter;
+@property (nonatomic, assign) NSString *selectedFilterText;
 
 @end

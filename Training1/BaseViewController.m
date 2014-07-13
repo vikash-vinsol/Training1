@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "BaseCollectionViewCell.h"
 #import "FPPopoverController.h"
+#import "AppDelegate.h"
 
 #import "FilterTableViewController.h"
 
@@ -24,6 +25,7 @@
     FilterTableViewController *filterViewController;
     FPPopoverController *popOver;
     UIButton *button;
+    AppDelegate *appDelegate;
 }
 
 @synthesize brandFilterArray,colorFilterArray,productsListArray,product;
@@ -34,7 +36,7 @@
     
     product = [[Product alloc] init];
     
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     productsListArray = [appDelegate getProductData];
     
@@ -43,29 +45,27 @@
     [_filterButton1 setTitle: [NSString stringWithFormat:@"%@",appDelegate.brandFilter.name] forState: UIControlStateNormal];
     [_filterButton2 setTitle: [NSString stringWithFormat:@"%@",appDelegate.colorFilter.name] forState: UIControlStateNormal];
     [_filterButton3 setTitle: @"Avail" forState: UIControlStateNormal];
+    
 }
 
 - (void)recieveFilterUpdate:(NSNotification *)notification
 {
     NSMutableArray *receivedFilteredArray;
     receivedFilteredArray = [[notification userInfo] objectForKey:@"Filters"];
-    
-    switch (button.tag)
+
+    if ([button.titleLabel.text isEqualToString:appDelegate.brandFilter.name])
     {
-        case 1:
-            filteredBrand = receivedFilteredArray;
-            break;
-
-        case 2:
-            filteredColor = receivedFilteredArray;
-            break;
-
-        case 3:
-            filteredAvail = receivedFilteredArray;
-             break;
-
-        default:
-            break;
+        filteredBrand = receivedFilteredArray;
+    }
+    
+    else if ([button.titleLabel.text isEqualToString:appDelegate.colorFilter.name])
+    {
+        filteredColor = receivedFilteredArray;
+    }
+    
+    else
+    {
+        filteredAvail = receivedFilteredArray;
     }
     
     [self filterVisibilityOfProduct];
@@ -115,7 +115,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section
 {
-    return [productsListArray  count];
+    return [productsListArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -156,7 +156,7 @@
     }
     
     button = sender;
-    filterViewController.selectedFilter = button.tag;
+    filterViewController.selectedFilterText = button.titleLabel.text;
     [popOver presentPopoverFromView:sender];
 }
 

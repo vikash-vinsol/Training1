@@ -61,36 +61,24 @@ static   NSMutableArray *selectedRowsArray ;
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    
-    NSLog(@"name %@", appDelegate.colorFilter.name);
-    
-//    if ([appDelegate.colorFilter.name isEqualToString: @"color"])
-//    {
-//        filterArray = appDelegate.colorFilter.values;
-//        selectedRowsArray = selectedRowsBrandArray;
-//    }
-    
-    switch (_selectedFilter)
+    if ([_selectedFilterText isEqualToString:appDelegate.brandFilter.name])
     {
-        case 1:
-            filterArray = appDelegate.brandFilter.values;
-            selectedRowsArray = selectedRowsBrandArray;
-            break;
-            
-        case 2:
-            filterArray = appDelegate.colorFilter.values;
-            selectedRowsArray = selectedRowsColorArray;
-            break;
-            
-        case 3:
-            filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
-            selectedRowsArray = selectedRowsAvailArray;
-            break;
-
-        default:
-            break;
+        filterArray = appDelegate.brandFilter.values;
+        selectedRowsArray = selectedRowsBrandArray;
     }
     
+    else if ([_selectedFilterText isEqualToString:appDelegate.colorFilter.name])
+    {
+        filterArray = appDelegate.colorFilter.values;
+        selectedRowsArray = selectedRowsColorArray;
+    }
+
+    else
+    {
+        filterArray = [NSMutableArray arrayWithObjects:@"1",@"0", nil];
+        selectedRowsArray = selectedRowsAvailArray;
+
+    }
     [self.tableView reloadData];
 }
 
